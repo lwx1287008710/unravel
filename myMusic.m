@@ -1,18 +1,11 @@
 
 
 
-
-
-
 % Unravel - TV Anime Tokyo Ghoul OP1 
 % Original Artist: TK from LING Tosite Sigure
 % Arranged by Animenz
 % please adjust the volume before listen to the music
-% 2020/07/06 14:13 in Hunan by ハノイの騎士だ using MATLAB R2018b
-
-
-
-
+% 2020/07/06 14:13 in Hunan by Lwx using MATLAB R2018b
 
 
 
@@ -53,8 +46,8 @@ y = .7 * (myMusic11 + myMusic12 + myMusic13 + myMusic14 + myMusic15 + myMusic16 
      (myMusic21 + myMusic22 + myMusic23 + myMusic24 + myMusic25).*rate);
 %y = .7 * (myMusic11 + myMusic12 + myMusic13 + myMusic14 + myMusic15 + myMusic16);
 %plot(y);
-tt=125
-ss=132
+%tt=125;
+%ss=132;
 clc;
 %sound(y((tt-1) * 8000 * time + 1:2000+ss * 8000 * time));
 sound(y);
@@ -88,10 +81,10 @@ sound3 = zeros(1,size(t,2));
 sound4 = zeros(1,size(t,2));
 sound5 = zeros(1,size(t,2));
 omega1 = 2*pi*freq;
-omega2 = 2*pi*(freq*1.005);
-omega3 = 2*pi*(freq*0.995);
-omega4 = 2*pi*(freq*1.01);
-omega5 = 2*pi*(freq*0.99);
+omega2 = 2*pi*(freq*1.002);
+omega3 = 2*pi*(freq*0.998);
+omega4 = 2*pi*(freq*1.005);
+omega5 = 2*pi*(freq*0.995);
 c = [1 0.3 0.02 0.001];
 for k = 1:size(c,2)
     sound1 = sound1 + c(k) * sin(k * omega1 .* t).* sin((1/(time*lenth))*pi .* t);% .* sin((1/(time*lenth))*pi .* t)
@@ -102,6 +95,7 @@ for k = 1:size(c,2)
 end
 
 mySound = 0.5 * volume * exp(-6 .* t) .* (3*sound1 + .5*sound2 + .5*sound3 + .125*sound4 + .125*sound5)/5;
+%mySound = 0.5 * exp(-6 .* t) .* sound1;%
 lenth = length(t2);
 end
 
